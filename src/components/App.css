@@ -1,0 +1,80 @@
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: #0f1128;
+  color: white;
+  padding-top: 7vh;
+  /* background-image: url(http://www.zingerbugimages.com/backgrounds/multi_colored_stars.gif);
+  background-position: top left;
+  background-repeat: repeat;
+  background-attachment: fixed; */
+}
+
+.main::before {
+  content: "";
+  background-image: url("../assets/images/theerastour.jpeg");
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.15;
+}
+
+.floating-tay {
+  position: absolute;
+  bottom: -50px;
+  left: 0px;
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  animation: float 6s ease-in-out infinite;
+  transform: translatey(-10px);
+}
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.days-until{
+  font-size: 130px;
+  font-weight: bold;
+}
+
+.the-eras-tour-title {
+  width: 97vw;
+  text-align: center;
+  font-size: 40px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-shadow:0 0 32px
+      #ba74ef,
+    0 0 68px #ba74ef, 0 0 125px #ba74ef;
+}
+
+@font-face {
+  font-family: 'Brittany';
+  src: local('Brittany'), url('../assets/fonts/BrittanySignature.ttf') format("truetype");
+}
+
+.taylor-swift-caption {
+  font-family: 'Brittany';
+  font-size: 40px;
+  color: #c4a8fb;
+  margin-top: -10px;
+}
