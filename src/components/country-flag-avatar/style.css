@@ -1,0 +1,7 @@
+.country-flag {
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-right: 7px;
+  }

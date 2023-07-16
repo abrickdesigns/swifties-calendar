@@ -3,27 +3,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
   width: 100%;
   background-color: #0f1128;
   color: white;
-  padding-top: 7vh;
-  /* background-image: url(http://www.zingerbugimages.com/backgrounds/multi_colored_stars.gif);
-  background-position: top left;
-  background-repeat: repeat;
-  background-attachment: fixed; */
+  /* padding-top: 14vh; */
+  background-image: url("../assets/images/theerastour-ts.png");
+  background-size: cover;
 }
 
-.main::before {
-  content: "";
-  background-image: url("../assets/images/theerastour.jpeg");
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  opacity: 0.15;
+.credits{
+  width: 100%;
+  background-color: #ba74ef;
+  padding: 6px 15px;
+  text-align: center;
+  margin-bottom: 60px;
+  cursor: pointer;
 }
 
 .floating-tay {
@@ -52,9 +48,49 @@
   }
 }
 
-.days-until{
-  font-size: 130px;
+.country-tag{
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 8px;
+  color: #0f1128;
   font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.country-flag{
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  object-fit: cover;
+  margin-right: 7px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&display=swap');
+.days-until{
+  font-size: 160px;
+  font-weight: bold;
+  opacity: 0.9;
+  user-select: none;
+  cursor: pointer;
+  font-family: 'Josefin Sans';
+  transition: all .1s linear;
+  line-height: 1.2;
+  margin-top: 50px;
+}
+
+.confetti-tip{
+  z-index: 100;
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  opacity: 0.8;
 }
 
 .the-eras-tour-title {
@@ -77,4 +113,5 @@
   font-size: 40px;
   color: #c4a8fb;
   margin-top: -10px;
+  z-index: 100;
 }
