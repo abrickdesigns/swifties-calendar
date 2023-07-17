@@ -2,12 +2,12 @@ import { Text, Tooltip } from '@nextui-org/react';
 import JSConfetti from 'js-confetti';
 import { useEffect, useMemo, useState } from 'react';
 import { Concert } from '../assets/concerts';
+import ShareIcon from '../assets/images/whatsapp-logo.png';
 import { daysBetween } from '../utils/dates';
 import { getRecentConcert, saveRecentConcert } from '../utils/storage';
+import './App.css';
 import ConcertSelectionDialog from './concert-selection-dialog';
 import CountryFlagAvatar from './country-flag-avatar';
-import PageBanner from '../assets/images/page-banner.png';
-import './App.css';
 
 const App = () => {
   const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
@@ -51,6 +51,12 @@ const App = () => {
     setShowConfettiTooltip(true);
   }
 
+  const share = () => {
+    console.log('share');
+  }
+
+  const shareText = `Are you ready for it? We’ve got ${daysUntilConcert} days left till Taylor Swift concert at ${selectedConcert?.city}. ❤️‍🔥🎤👱🏻‍♀️ https://swiftie.club`
+
   useEffect(() => {
     const recentConcert = getRecentConcert();
     if (recentConcert) setSelectedConcert(recentConcert);
@@ -72,7 +78,7 @@ const App = () => {
   return (
     <div className="main">
       <div className='credits' onClick={contact}>
-        <Text size={14} weight="bold" style={{ whiteSpace: 'pre-wrap' }}>
+        <Text size={15} weight="bold" style={{ whiteSpace: 'pre-wrap' }}>
           fan made  |  @amitbrickman
         </Text>
       </div>
@@ -101,7 +107,12 @@ const App = () => {
       <Text size={23} weight="bold" color='white' style={{ marginTop: "-15px" }}>
         days to go
       </Text>
-      {/* <img src={PageBanner} style={{ width: '100%', position: 'absolute', bottom: 0, height: '20vh' }} alt="page-bottom"/> */}
+      <a  href={`https://wa.me/?text=${shareText}`} className='share-button' onClick={share}>
+        <img className='share-icon' src={ShareIcon} alt="whatsapp icon"/>
+        <Text size={16} style={{ color: '#cecece' }}>
+          Share
+        </Text>
+      </a>
       <ConcertSelectionDialog
         show={showCountrySelectionModal}
         closable={!noConcertSelected}

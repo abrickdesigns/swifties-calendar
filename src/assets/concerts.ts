@@ -61,12 +61,7 @@ const allConcerts: Record<string, Concert[]> =
         {
             country: 'Argentina',
             city: 'Buenos Aires',
-            date: new Date('11/x1/2023')
-        },
-        {
-            country: 'Argentina',
-            city: 'Buenos Aires',
-            date: new Date('08/27/2023')
+            date: new Date('11/11/2023')
         },
     ],
     'Brazil': [
