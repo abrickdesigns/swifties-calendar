@@ -89,7 +89,7 @@ const App = () => {
           content={"Tap here for confetti!"}
           color="secondary"
           style={{ width: "100%" }}
-          offset={-10}
+          offset={30}
           visible={isFirstVisit && showConfettiTooltip}
           isDisabled={!isFirstVisit || !showConfettiTooltip}
         >
