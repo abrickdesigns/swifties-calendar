@@ -5,6 +5,7 @@ import { Concert } from '../assets/concerts';
 import ShareIcon from '../assets/images/whatsapp-logo.png';
 import { daysBetween } from '../utils/dates';
 import { getRecentConcert, saveRecentConcert } from '../utils/storage';
+import ThirteenDialog from './13-dialog';
 import './App.css';
 import ConcertSelectionDialog from './concert-selection-dialog';
 import CountryFlagAvatar from './country-flag-avatar';
@@ -16,6 +17,8 @@ const App = () => {
   const [daysTransform, setDaysTransform] = useState<string>('scale(1)');
   const [isFirstVisit, setisFirstVisit] = useState(false);
   const [showConfettiTooltip, setShowConfettiTooltip] = useState(false);
+  const [showThirteenDialog, setShowThirteenDialog] = useState(false);
+  const [tapCount, setTapCount] = useState(0);
 
   const noConcertSelected = selectedConcert === null;
 
@@ -72,8 +75,15 @@ const App = () => {
     if (selectedConcert) {
       saveRecentConcert(selectedConcert);
       doConfetti();
+      setTapCount(0);
     }
   }, [selectedConcert]);
+
+  useEffect(() => {
+    if (tapCount === 13) {
+      setShowThirteenDialog(true)
+    }
+  }, [tapCount])
 
   return (
     <div className="main">
@@ -99,7 +109,7 @@ const App = () => {
           visible={isFirstVisit && showConfettiTooltip}
           isDisabled={!isFirstVisit || !showConfettiTooltip}
         >
-          <div onClick={() => { doConfetti(); setShowConfettiTooltip(false) }} className='days-until' style={{ transform: daysTransform }}>
+          <div onClick={() => { doConfetti(); setShowConfettiTooltip(false); setTapCount(count => count + 1) }} className='days-until' style={{ transform: daysTransform }}>
             {daysUntilConcert}
           </div>
         </Tooltip>
@@ -107,8 +117,8 @@ const App = () => {
       <Text size={23} weight="bold" color='white' style={{ marginTop: "-15px" }}>
         days to go
       </Text>
-      <a  href={`https://wa.me/?text=${shareText}`} className='share-button' onClick={share}>
-        <img className='share-icon' src={ShareIcon} alt="whatsapp icon"/>
+      <a href={`https://wa.me/?text=${shareText}`} className='share-button' onClick={share}>
+        <img className='share-icon' src={ShareIcon} alt="whatsapp icon" />
         <Text size={16} style={{ color: '#cecece' }}>
           Share
         </Text>
@@ -118,6 +128,7 @@ const App = () => {
         closable={!noConcertSelected}
         onClose={() => setShowCountrySelectionModal(false)}
         onConcertSelect={(concert) => { setSelectedConcert(concert); setShowCountrySelectionModal(false) }} />
+      <ThirteenDialog show={showThirteenDialog} onClose={() => { setShowThirteenDialog(false) }} />
     </div>
   );
 }
