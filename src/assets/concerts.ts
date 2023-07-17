@@ -16,7 +16,7 @@ import ItalyFlag from './images/flags/italy.png'
 import GermanyFlag from './images/flags/germany.png'
 import PolandFlag from './images/flags/poland.png'
 import UKFlag from './images/flags/uk.png'
-
+import USFlag from './images/flags/us.png'
 export interface Concert {
     city: string;
     country: string;
@@ -25,6 +25,58 @@ export interface Concert {
 
 const allConcerts: Record<string, Concert[]> =
 {
+    'US': [
+        {
+            country: 'US',
+            city: 'Seattle',
+            date: new Date('07/22/2023')
+        },
+        {
+            country: 'US',
+            city: 'Mexico City',
+            date: new Date('07/23/2023')
+        },
+        {
+            country: 'US',
+            city: 'Santa Clara',
+            date: new Date('07/28/2023')
+        },
+        {
+            country: 'US',
+            city: 'Santa Clara',
+            date: new Date('07/29/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/03/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/04/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/05/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/07/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/08/2023')
+        },
+        {
+            country: 'US',
+            city: 'Los Angeles',
+            date: new Date('08/09/2023')
+        },
+    ],
     'Mexico': [
         {
             country: 'Mexico',
@@ -451,12 +503,13 @@ export const FLAG_BY_COUNTRY: Record<string, string> = {
     'Sweden': SwedenFlag,
     'Portugal': PortugalFlag,
     'Spain': SpainFlag,
-    'Ireland':IrelandFlag,
-    'Netherlands':NetherlandsFlag,
-    'Switzerland':SwitzerlandFlag,
-    'Italy':ItalyFlag,
-    'Germany':GermanyFlag,
-    'Poland':PolandFlag,
+    'Ireland': IrelandFlag,
+    'Netherlands': NetherlandsFlag,
+    'Switzerland': SwitzerlandFlag,
+    'Italy': ItalyFlag,
+    'Germany': GermanyFlag,
+    'Poland': PolandFlag,
+    'US': USFlag,
 }
 
 export default allConcerts;
