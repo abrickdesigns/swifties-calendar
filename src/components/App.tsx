@@ -4,9 +4,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { Concert } from '../assets/concerts';
 import { daysBetween } from '../utils/dates';
 import { getRecentConcert, saveRecentConcert } from '../utils/storage';
-import './App.css';
 import ConcertSelectionDialog from './concert-selection-dialog';
 import CountryFlagAvatar from './country-flag-avatar';
+import PageBanner from '../assets/images/page-banner.png';
+import './App.css';
 
 const App = () => {
   const [selectedConcert, setSelectedConcert] = useState<Concert | null>(null);
@@ -97,10 +98,10 @@ const App = () => {
           </div>
         </Tooltip>
       </div>
-
-
-      <div>days to go</div>
-      {/* <img className='floating-tay' src={floatingTaylor} /> */}
+      <Text size={23} weight="bold" color='white' style={{ marginTop: "-15px" }}>
+        days to go
+      </Text>
+      <img src={PageBanner} style={{ width: '100%', position: 'absolute', bottom: 0, height: '20vh' }} alt="page-bottom"/>
       <ConcertSelectionDialog
         show={showCountrySelectionModal}
         closable={!noConcertSelected}
