@@ -101,7 +101,7 @@ const App = () => {
       <Text size={23} weight="bold" color='white' style={{ marginTop: "-15px" }}>
         days to go
       </Text>
-      <img src={PageBanner} style={{ width: '100%', position: 'absolute', bottom: 0, height: '20vh' }} alt="page-bottom"/>
+      {/* <img src={PageBanner} style={{ width: '100%', position: 'absolute', bottom: 0, height: '20vh' }} alt="page-bottom"/> */}
       <ConcertSelectionDialog
         show={showCountrySelectionModal}
         closable={!noConcertSelected}
