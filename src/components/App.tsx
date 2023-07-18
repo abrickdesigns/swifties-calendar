@@ -27,6 +27,8 @@ const App = () => {
   }, [selectedConcert]);
 
   const doConfetti = async () => {
+    //@ts-ignore
+    window.gtag('event', 'do-confetti', {});
     confettiInstance?.addConfetti({ emojis: ['🌈', '⚡️', '💥', '✨', '💫', '🌸'], emojiSize: 60 });
   }
 
@@ -46,6 +48,8 @@ const App = () => {
   };
 
   const contact = () => {
+    //@ts-ignore
+    window.gtag('event', 'contact', {});
     window.open('instagram://user?username=amitbrickman');
   }
 
@@ -55,7 +59,8 @@ const App = () => {
   }
 
   const share = () => {
-    console.log('share');
+    //@ts-ignore
+    window.gtag('event', 'share-to-whatsapp', {});
   }
 
   const shareText = `Are you ready for it? We’ve got ${daysUntilConcert} days left till Taylor Swift concert at ${selectedConcert?.city}. ❤️‍🔥🎤👱🏻‍♀️ https://swiftie.club`
@@ -81,6 +86,8 @@ const App = () => {
 
   useEffect(() => {
     if (tapCount === 13) {
+      //@ts-ignore
+      window.gtag('event', 'open-13-dialog', {});
       setShowThirteenDialog(true)
     }
   }, [tapCount])

@@ -29,7 +29,7 @@ const allConcerts: Record<string, Concert[]> =
         {
             country: 'US',
             city: 'Seattle',
-            date: new Date('07/22/2023')
+            date: new Date('07/01/2023')
         },
         {
             country: 'US',
