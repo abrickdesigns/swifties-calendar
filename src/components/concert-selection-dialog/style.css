@@ -1,6 +1,16 @@
-.nextui-modal-body{
-    max-height: 300px;
-    overflow: scroll;
+.nextui-modal-body {
+  max-height: 300px;
+  overflow: scroll;
+}
+
+@media (min-width: 1000px) {
+  .nextui-modal-body {
+    max-width: 500px;
+  }
+
+  .nextui-backdrop-content {
+    max-width: 500px;
+  }
 }
 
 .country {
