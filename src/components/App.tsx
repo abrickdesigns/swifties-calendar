@@ -79,6 +79,10 @@ const App = () => {
   useEffect(() => {
     if (selectedConcert) {
       saveRecentConcert(selectedConcert);
+      //@ts-ignore
+      window.gtag('event', 'concert-choose', {
+       ...selectedConcert
+      });
       doConfetti();
       setTapCount(0);
     }

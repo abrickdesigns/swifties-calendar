@@ -1,5 +1,6 @@
 import { Button, Modal, Row, Text } from "@nextui-org/react";
 import allConcerts, { Concert } from "../../assets/concerts";
+import { isInPast } from "../../utils/dates";
 import CountryFlagAvatar from "../country-flag-avatar";
 import './style.css';
 
@@ -11,6 +12,14 @@ interface ConcertSelectionDialogProps {
 }
 
 const ConcertSelectionDialog: React.FC<ConcertSelectionDialogProps> = ({ show, closable, onClose, onConcertSelect }) => {
+
+    const upcomingConcerts =  () => {
+        const concerts: Record<string, Concert[]> = {};
+        Object.entries(allConcerts).forEach(([country, countryConcerts]) => {
+            concerts[country] = countryConcerts.filter(concert => !isInPast(concert.date));
+        })
+        return concerts;
+    }
 
     return (
         <Modal
@@ -32,7 +41,7 @@ const ConcertSelectionDialog: React.FC<ConcertSelectionDialogProps> = ({ show, c
                 </Text>
             </Modal.Header>
             <Modal.Body>
-                {Object.entries(allConcerts).map(([country, concerts]) => (
+                {Object.entries(upcomingConcerts()).map(([country, concerts]) => (
                     <div className="country" key={country}>
                         <Text size={16} weight="bold" style={{ marginBottom: '5px' }}>
                             {country}

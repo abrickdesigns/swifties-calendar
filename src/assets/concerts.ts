@@ -120,6 +120,11 @@ const allConcerts: Record<string, Concert[]> =
         {
             country: 'Brazil',
             city: 'Rio de Janeiro',
+            date: new Date('11/17/2023')
+        },
+        {
+            country: 'Brazil',
+            city: 'Rio de Janeiro',
             date: new Date('11/18/2023')
         },
         {
