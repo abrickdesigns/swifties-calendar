@@ -17,6 +17,8 @@ import GermanyFlag from './images/flags/germany.png'
 import PolandFlag from './images/flags/poland.png'
 import UKFlag from './images/flags/uk.png'
 import USFlag from './images/flags/us.png'
+import CanadaFlag from './images/flags/canada.png'
+
 export interface Concert {
     city: string;
     country: string;
@@ -493,6 +495,85 @@ const allConcerts: Record<string, Concert[]> =
             date: new Date('08/10/2024')
         },
     ],
+    'US #2': [
+        {
+            country: 'US #2',
+            city: 'Miami',
+            date: new Date('10/18/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'Miami',
+            date: new Date('10/19/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'Miami',
+            date: new Date('10/20/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'New Orleans',
+            date: new Date('10/25/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'New Orleans',
+            date: new Date('10/26/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'New Orleans',
+            date: new Date('10/27/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'Indianapolis',
+            date: new Date('11/01/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'Indianapolis',
+            date: new Date('11/02/2024')
+        },
+        {
+            country: 'US #2',
+            city: 'Indianapolis',
+            date: new Date('11/03/2024')
+        },
+    ],
+    'Canada': [
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/14/2024')
+        },
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/15/2024')
+        },
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/16/2024')
+        },
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/21/2024')
+        },
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/22/2024')
+        },
+        {
+            country: 'Canada',
+            city: 'Toronto',
+            date: new Date('11/23/2024')
+        },
+    ],
 };
 
 export const FLAG_BY_COUNTRY: Record<string, string> = {
@@ -515,6 +596,8 @@ export const FLAG_BY_COUNTRY: Record<string, string> = {
     'Germany': GermanyFlag,
     'Poland': PolandFlag,
     'US': USFlag,
+    'US #2': USFlag,
+    'Canada': CanadaFlag
 }
 
 export default allConcerts;
