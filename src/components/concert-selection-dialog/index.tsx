@@ -16,7 +16,10 @@ const ConcertSelectionDialog: React.FC<ConcertSelectionDialogProps> = ({ show, c
     const upcomingConcerts =  () => {
         const concerts: Record<string, Concert[]> = {};
         Object.entries(allConcerts).forEach(([country, countryConcerts]) => {
-            concerts[country] = countryConcerts.filter(concert => !isInPast(concert.date));
+            const countryUpcoming = countryConcerts.filter(concert => !isInPast(concert.date));
+            if (countryUpcoming.length > 0){
+                concerts[country] = countryUpcoming;
+            }
         })
         return concerts;
     }
